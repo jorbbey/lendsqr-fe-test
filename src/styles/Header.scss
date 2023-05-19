@@ -1,0 +1,53 @@
+@import "./variables.scss";
+
+header {
+  background-color: bisque;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .firstCtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    background-color: aqua;
+
+    .searchCtn {
+      //  background-color: palevioletred;
+
+      input {
+        outline: none;
+        border: none;
+        height: 35px;
+        width: 20pc;
+        padding-left: 10px;
+        background: #ffffff;
+        opacity: 0.2;
+        border: 1px solid $primary-color;
+        border-radius: 8px;
+        margin-right: 50px;
+      }
+    }
+  }
+
+  .secondCtn {
+    background-color: chartreuse;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    margin-right: 50px;
+    color: $primary-color;
+    cursor: pointer;
+
+    p {
+      text-decoration: underline;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import "./variables.scss";
+
+.UserDashboard {
+  width: 100%;
+
+  .user-dashboard-ctn {
+    background-color: ghostwhite;
+    display: flex;
+    justify-content: space-between;
+
+    main {
+      background-color: chartreuse;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        background-color: ghostwhite;
+        width: 90%;
+
+        h2 {
+          color: $primary-color;
+        }
+
+        .users-box-ctn {
+          background-color: brown;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 45px auto;
+
+          .user-box-ctn {
+            background-color: #ffffff;
+            width: 20%;
+            padding-left: 25px;
+            text-transform: uppercase;
+            color: $primary-color;
+            cursor: pointer;
+
+            i {
+              font-size: small;
+            }
+          }
+        }
+      }
+
+      .dashboard {
+        background-color: palevioletred;
+        width: 100%;
+        .table-head {
+          background-color: purple;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          div {
+            text-transform: uppercase;
+            color: $primary-color;
+            background-color: yellowgreen;
+            margin-left: 10px;
+          }
+
+        }
+      }
+    }
+  }
+}

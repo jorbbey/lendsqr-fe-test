@@ -1,0 +1,77 @@
+@import "./variables.scss";
+
+.Menu {
+  background-color: #fff;
+  width: 135%;
+  margin: 15px auto;
+  color: $primary-color;
+  cursor: pointer;
+
+  .SwitchOrg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    //     background-color: palevioletred;
+    margin-left: 25px;
+
+    i {
+      font-size: x-small;
+    }
+  }
+
+  .dashboard-link {
+    text-decoration: none;
+    color: $primary-color;
+
+    .dashboard-ctn {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      width: 50%;
+      margin-left: 25px;
+      text-decoration: none;
+
+      i {
+        font-size: x-small;
+      }
+
+      p {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .MenuItems {
+    margin: 20px 25px;
+    // background-color: green;
+
+    li {
+      list-style: none;
+
+      h5 {
+        margin: 0px auto;
+        margin-top: 20px;
+      }
+
+      .menu-link {
+        text-decoration: none;
+        color: $primary-color;
+
+        div {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+
+          i {
+            font-size: x-small;
+          }
+          p {
+            margin-left: 10px;
+            
+          }
+        }
+      }
+    }
+  }
+}
