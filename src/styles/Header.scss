@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 header {
-  background-color: bisque;
+  // background-color: bisque;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -11,12 +11,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60%;
-    background-color: aqua;
+    width: 50%;
+    // background-color: aqua;
 
     .searchCtn {
-      //  background-color: palevioletred;
-
+      // background-color: palevioletred;
       input {
         outline: none;
         border: none;
@@ -24,16 +23,27 @@ header {
         width: 20pc;
         padding-left: 10px;
         background: #ffffff;
-        opacity: 0.2;
-        border: 1px solid $primary-color;
-        border-radius: 8px;
+        border: 1px solid rgb(236, 229, 229);
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
         margin-right: 50px;
+      }
+
+      i {
+        font-size: 15px;
+        color: #ffffff;
+        background-color: $secondary-color;
+        padding: 11.5px;
+        margin-left: -51px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        cursor: pointer;
       }
     }
   }
 
   .secondCtn {
-    background-color: chartreuse;
+    // background-color: chartreuse;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -45,9 +55,25 @@ header {
     p {
       text-decoration: underline;
     }
+    
+    i{
+      color: $primary-color;
+      font-size: x-large;
+      margin: 0px 20px ;
+    }
 
     img {
       border-radius: 50%;
     }
+
+    .caret {
+       font-size: small;
+      margin-left: 0px;
+      margin-top: 5px;
+    }
   }
 }
+
+
+
+

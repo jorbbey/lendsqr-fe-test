@@ -2,6 +2,10 @@ import React, { FC } from "react";
 import "../styles/Menu.scss";
 import { menuData } from "../menuData";
 import { Link } from "react-router-dom";
+import { FaUserFriends } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
+import { FaHouseUser } from "react-icons/fa";
+import { HiBriefcase } from "react-icons/hi";
 export interface Props {}
 
 export const Menu: FC = () => {
@@ -9,14 +13,20 @@ export const Menu: FC = () => {
     <div className="Menu">
       {/* organization switch */}
       <div className="SwitchOrg">
-        <i>SO</i>
+        <i>
+          <HiBriefcase />
+        </i>
         <p>Switch Organizations</p>
-        <i>go</i>
+        <i>
+          <FaAngleDown />
+        </i>
       </div>
       {/* Dashboard Ctn */}
       <Link to="/dashboard" className="dashboard-link">
         <div className="dashboard-ctn">
-          <i>D</i>
+          <i>
+            <FaHouseUser />
+          </i>
           <p>Dashboard</p>
         </div>
       </Link>
@@ -29,7 +39,9 @@ export const Menu: FC = () => {
             {data.list.map((list: any) => (
               <Link to={list.link} className="menu-link" key={list.item}>
                 <div>
-                  <i>{list.icon}</i>
+                  <i>
+                    <FaUserFriends />
+                  </i>
                   <p>{list.item}</p>
                 </div>
               </Link>

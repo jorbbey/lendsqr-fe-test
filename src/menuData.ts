@@ -1,3 +1,6 @@
+import { FaUserFriends }  from "react-icons/fa";
+
+
 export const menuData = [
   {
     id: 0,
@@ -5,7 +8,7 @@ export const menuData = [
     list: [
       {
         item: "Users",
-        icon: "U",
+        icon: "u",
         link: "/dashboard",
       },
       {

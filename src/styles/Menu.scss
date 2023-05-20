@@ -5,6 +5,7 @@
   width: 135%;
   margin: 15px auto;
   color: $primary-color;
+  opacity: 0.65;
   cursor: pointer;
 
   .SwitchOrg {
@@ -16,7 +17,12 @@
     margin-left: 25px;
 
     i {
-      font-size: x-small;
+      font-size: small;
+      color: $primary-color;
+    }
+
+    p {
+      font-size: medium;
     }
   }
 
@@ -33,11 +39,13 @@
       text-decoration: none;
 
       i {
-        font-size: x-small;
+        font-size: small;
+        color: $primary-color;
       }
 
       p {
         margin-left: 10px;
+        font-size: small;
       }
     }
   }
@@ -52,6 +60,7 @@
       h5 {
         margin: 0px auto;
         margin-top: 20px;
+        font-weight: bold;
       }
 
       .menu-link {
@@ -62,13 +71,19 @@
           display: flex;
           justify-content: start;
           align-items: center;
+          margin: 0px 0px;
+          padding-left: 20px;
+          &:active {
+            background-color: rgb(211, 238, 229);
+            border-left: 2px solid $secondary-color;
+          }
 
           i {
-            font-size: x-small;
+            font-size: small;
           }
           p {
             margin-left: 10px;
-            
+            font-size: small;
           }
         }
       }

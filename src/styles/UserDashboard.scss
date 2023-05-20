@@ -9,22 +9,23 @@
     justify-content: space-between;
 
     main {
-      background-color: chartreuse;
+      background-color: ghostwhite;
       width: 80%;
       display: flex;
       justify-content: center;
       align-items: center;
 
       div {
-        background-color: ghostwhite;
+        // background-color: purple;
         width: 90%;
+       
 
         h2 {
           color: $primary-color;
         }
 
         .users-box-ctn {
-          background-color: brown;
+          // background-color: brown;
           width: 100%;
           display: flex;
           justify-content: space-between;
@@ -33,35 +34,168 @@
 
           .user-box-ctn {
             background-color: #ffffff;
-            width: 20%;
-            padding-left: 25px;
+            width: 22%;
             text-transform: uppercase;
             color: $primary-color;
             cursor: pointer;
 
-            i {
-              font-size: small;
+            div {
+              background-color: #ffffff;
+              width: 80%;
+              margin: 20px auto;
+              i {
+                font-size: medium;
+                padding: 10px;
+                border-radius: 50%;
+                margin-top: 20px;
+              }
+
+              p {
+                font-size: small;
+                margin-top: 25px;
+              }
+
+              h2 {
+                font-size: x-large;
+              }
             }
           }
         }
       }
 
       .dashboard {
-        background-color: palevioletred;
+      background-color: #ffffff;
         width: 100%;
-        .table-head {
-          background-color: purple;
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
+       display: flex;
+       justify-content: center;
+       align-items: center;
 
-          div {
-            text-transform: uppercase;
-            color: $primary-color;
-            background-color: yellowgreen;
-            margin-left: 10px;
+        div {
+          
+          width: 95%;
+          .dashboard-ctn {
+            // background-color: purple;
+            width: 100%;
+
+            .table-head {
+              // background-color: yellow;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              div {
+                text-transform: uppercase;
+                color: $primary-color;
+                // background-color: yellowgreen;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                cursor: pointer;
+                width: 16%;
+
+                h5 {
+                  // margin-left: -10px;
+                }
+
+                .ico {
+                  color: $primary-color;
+                  font-size: x-large;
+                  margin-left: 10px;
+                }
+              }
+            }
+
+            ul {
+              width: 96%;
+              // background-color: greenyellow;
+              .dashboard-item {
+                // background-color: purple;
+                margin: 20px -40px;
+                width: 104%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                div {
+                  // background-color: greenyellow;
+                  width: 15%;
+                  font-size: 14px;
+                  word-wrap: break-word;
+                }
+              }
+            }
           }
 
+          .dashboard-footer{
+            // background-color: blueviolet;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+
+        .filter-ctn {
+          background-color: #ffffff;
+          width: 30%;
+          .filter-box {
+            background-color: #ffffff;
+            width: 80%;
+            margin: 0px auto;
+
+            div {
+              background-color: #ffffff;
+              width: 100%;
+              margin: 20px 0px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: start;
+
+              label {
+                color: $primary-color;
+                text-transform: capitalize;
+                font-weight: 600;
+                margin-top: 20px;
+                margin-bottom: 5px;
+              }
+
+              input {
+                outline: none;
+                padding: 10px;
+                width: 90%;
+                border-radius: 8px;
+                border: 2px solid gray;
+              }
+            }
+            .btn-ctn {
+              // background-color: chocolate;
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+              margin: 25px auto;
+
+              button {
+                outline: none;
+                padding: 12px;
+                width: 45%;
+                border-radius: 8px;
+                font-weight: 700;
+                color: #ffffff;
+                text-transform: capitalize;
+                border: none;
+                background-color: $secondary-color;
+                cursor: pointer;
+
+                &:first-child {
+                  background-color: transparent;
+                  color: $primary-color;
+                  border: 1px solid $primary-color;
+                }
+              }
+            }
+          }
         }
       }
     }

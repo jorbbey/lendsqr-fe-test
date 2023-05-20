@@ -1,101 +1,97 @@
-import React, { FC, MouseEvent } from "react";
-import '../styles/Pagination.scss'
+import React, { FC, useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-
+import '../styles/Pagination.scss'
 interface PaginationProps {
-  currentPage: number;
   totalPages: number;
+  currentPage: number;
   onPageChange: (page: number) => void;
 }
 
 export const Pagination: FC<PaginationProps> = ({
-  currentPage,
   totalPages,
+  currentPage,
   onPageChange,
 }) => {
-  const handlePrevPage = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
+  const [pageRange, setPageRange] = useState<number[]>([]);
+
+  const generatePageRange = () => {
+    const range = [];
+    const maxVisiblePages = 5;
+
+    const startPage = Math.max(
+      currentPage - Math.floor(maxVisiblePages / 2),
+      1
+    );
+    const endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+
+    for (let i = startPage; i <= endPage; i++) {
+      range.push(i);
+    }
+
+    setPageRange(range);
+  };
+
+  const handlePageChange = (page: number) => {
+    onPageChange(page);
+  };
+
+  useEffect(() => {
+    generatePageRange();
+  }, [currentPage, totalPages]);
+
+  const goToPreviousPage = () => {
     if (currentPage > 1) {
-      onPageChange(currentPage - 1);
+      handlePageChange(currentPage - 1);
     }
   };
 
-  const handleNextPage = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
+  const goToNextPage = () => {
     if (currentPage < totalPages) {
-      onPageChange(currentPage + 1);
+      handlePageChange(currentPage + 1);
     }
   };
 
-  const renderPageNumbers = (): JSX.Element[] => {
-    const maxVisiblePages = 5; // Maximum number of visible page numbers (excluding ellipsis)
-    const pageNumbers: (number | string)[] = [];
-
-    if (totalPages <= maxVisiblePages) {
-      // If total pages are less than or equal to maxVisiblePages, display all page numbers
-      for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-      }
-    } else {
-      const halfMaxVisiblePages = Math.floor(maxVisiblePages / 2);
-      const isLeftBoundary = currentPage <= halfMaxVisiblePages + 1;
-      const isRightBoundary = currentPage >= totalPages - halfMaxVisiblePages;
-
-      // Display page numbers near the current page and add ellipsis where necessary
-      for (let i = 1; i <= totalPages; i++) {
-        if (
-          i === 1 ||
-          i === totalPages ||
-          (i >= currentPage - halfMaxVisiblePages &&
-            i <= currentPage + halfMaxVisiblePages)
-        ) {
-          pageNumbers.push(i);
-        } else if (
-          isLeftBoundary &&
-          i === currentPage + halfMaxVisiblePages + 1
-        ) {
-          pageNumbers.push("...");
-        } else if (
-          isRightBoundary &&
-          i === currentPage - halfMaxVisiblePages - 1
-        ) {
-          pageNumbers.push("...");
-        }
-      }
-    }
-
-    return pageNumbers.map((pageNumber, index) => (
-      <li key={index} className={pageNumber === currentPage ? "current" : ""}>
-        {pageNumber === "..." ? (
-          <span>{pageNumber}</span>
-        ) : (
-          <a
-            href={`#${pageNumber}`}
-            onClick={(event) => onPageChange(pageNumber as number, event)}
-          >
-            {pageNumber}
-          </a>
-        )}
+  const renderPageLinks = () => {
+    const links = pageRange.map((page) => (
+      <li key={page} className={page === currentPage ? "current" : ""}>
+        <a href={`#${page}`} onClick={() => handlePageChange(page)}>
+          {page}
+        </a>
       </li>
     ));
+
+    // Add ellipsis before the first page link if it's not the first page
+    if (pageRange.length > 0 && pageRange[0] !== 1) {
+      links.unshift(
+        <li key="ellipsis-start">
+          <span>...</span>
+        </li>
+      );
+    }
+
+    // Add ellipsis after the last page link if it's not the last page
+    if (
+      pageRange.length > 0 &&
+      pageRange[pageRange.length - 1] !== totalPages
+    ) {
+      links.push(
+        <li key="ellipsis-end">
+          <span>...</span>
+        </li>
+      );
+    }
+
+    return links;
   };
 
   return (
     <div>
       <nav data-pagination>
-        <a
-          href="#!"
-          className={currentPage === 1 ? "disabled" : ""}
-          onClick={handlePrevPage}
-        >
+        <a href="#!" onClick={goToPreviousPage}>
           <FaAngleLeft />
         </a>
-        <ul>{renderPageNumbers()}</ul>
-        <a
-          href="#!"
-          className={currentPage === totalPages ? "disabled" : ""}
-          onClick={handleNextPage}
-        >
+        <ul>{renderPageLinks()}</ul>
+        <a href="#!" onClick={goToNextPage}>
           <FaAngleRight />
         </a>
       </nav>
