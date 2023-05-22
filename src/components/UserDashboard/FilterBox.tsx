@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { FaAngleDown } from "react-icons/fa";
-import "../styles/UserDashboard.scss";
+import "../../scss/style.scss";
 export interface Props {}
 
 export const FilterBox: FC = () => {

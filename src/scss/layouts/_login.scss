@@ -1,0 +1,120 @@
+@use "../utils" as u;
+@use "../globals" as g;
+
+.login {
+  //   background-color: hsl(84, 93%, 28%);
+  width: min(100% - 40px, 1500px);
+  margin-inline: auto;
+  font-family: u.$primary-font-family;
+
+  &__logo {
+    margin: 50px 30px;
+  }
+
+  &__main {
+    //     background-color: hsl(300, 93%, 17%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px auto;
+
+    @include u.breakpoint-up(large) {
+      flex-direction: row;
+    }
+
+    &__image {
+      width: 100%;
+
+      @include u.breakpoint-up(large) {
+        width: 50%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    &__form {
+      //  background-color: hsl(0, 89%, 33%);
+      width: 100%;
+      margin: 30px auto;
+
+      @include u.breakpoint-up(large) {
+        width: 40%;
+      }
+
+      &__head {
+        //    background-color: hsl(175, 70%, 17%);
+        width: 50%;
+
+        h1 {
+          color: g.$primary-color;
+          font-weight: bolder;
+        }
+
+        p {
+          color: g.$light-blue;
+          margin-bottom: 20px;
+        }
+      }
+
+      form {
+        //    background-color: hsl(34, 85%, 24%);
+        display: flex;
+        flex-direction: column;
+
+        input {
+          width: 100%;
+          height: 40px;
+          border-radius: 8px;
+          margin-bottom: 10px;
+          padding-left: 10px;
+          outline: none;
+          background-color: transparent;
+          border: 1px solid g.$light-gray;
+
+          &::placeholder {
+            color: g.$light-gray;
+          }
+        }
+
+        .passwordBtn {
+          position: absolute;
+          width: auto;
+          background-color: transparent;
+          color: white;
+          font-weight: bold;
+          font-size: 10px;
+          border: none;
+          outline: none;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        p {
+          color: g.$secondary-color;
+          font-size: small;
+        }
+      }
+
+      &__btn {
+        background-color: g.$secondary-color;
+        width: 100%;
+        height: 45px;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+        border: none;
+      }
+    }
+
+    &__errorCtn{
+      // background-color: hsl(160, 95%, 30%);
+      margin: 10px auto;
+      color: hsl(0, 61%, 46%);
+      font-size: small;
+    }
+  }
+}

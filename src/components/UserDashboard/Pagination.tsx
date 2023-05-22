@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import '../styles/Pagination.scss'
+import "../../scss/style.scss"
 interface PaginationProps {
   totalPages: number;
   currentPage: number;
@@ -14,7 +14,7 @@ export const Pagination: FC<PaginationProps> = ({
 }) => {
   const [pageRange, setPageRange] = useState<number[]>([]);
 
-  const generatePageRange = () => {
+  const generatePageRange = (): void => {
     const range = [];
     const maxVisiblePages = 5;
 
@@ -31,7 +31,7 @@ export const Pagination: FC<PaginationProps> = ({
     setPageRange(range);
   };
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page: number): void => {
     onPageChange(page);
   };
 
@@ -85,7 +85,7 @@ export const Pagination: FC<PaginationProps> = ({
   };
 
   return (
-    <div>
+    <>
       <nav data-pagination>
         <a href="#!" onClick={goToPreviousPage}>
           <FaAngleLeft />
@@ -95,6 +95,6 @@ export const Pagination: FC<PaginationProps> = ({
           <FaAngleRight />
         </a>
       </nav>
-    </div>
+    </>
   );
 };

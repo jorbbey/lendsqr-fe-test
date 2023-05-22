@@ -1,7 +1,8 @@
 @import "./variables.scss";
 
+
+
 header {
-  // background-color: bisque;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -55,11 +56,11 @@ header {
     p {
       text-decoration: underline;
     }
-    
-    i{
+
+    i {
       color: $primary-color;
       font-size: x-large;
-      margin: 0px 20px ;
+      margin: 0px 20px;
     }
 
     img {
@@ -67,13 +68,9 @@ header {
     }
 
     .caret {
-       font-size: small;
+      font-size: small;
       margin-left: 0px;
       margin-top: 5px;
     }
   }
 }
-
-
-
-

@@ -1,8 +1,7 @@
 import React, { FC, useState } from "react";
-import { Link } from "react-router-dom";
-import "../styles/UserLogin.scss";
-import { Logo } from "./Logo";
-import heroImage from "../assets/images/hero-image.svg";
+import '../scss/style.scss'
+import { Logo } from "./Header/Logo";
+import heroUrl from "../assets/images/hero-image.svg";
 export interface Props {}
 
 export const UserLogin: FC = () => {
@@ -26,25 +25,27 @@ export const UserLogin: FC = () => {
     }
   };
 
-  return (
-    <>
-      <div className="UserLoginLogo">
-        <Logo />
-      </div>
+  const heroImage: string = heroUrl;
 
-      <div className="UserLogin">
+  return (
+    <div className="login">
+      <section className="login__logo">
+        <Logo />
+      </section>
+
+      <main className="login__main">
         {/* hero Image */}
-        <div className="heroImage">
+        <section className="login__main__image">
           <img src={heroImage} alt="heroImage" />
-        </div>
+        </section>
 
         {/* login Form */}
-        <div className="UserLoginForm">
-          <div className="UserLoginFormHead">
+        <section className="login__main__form">
+          <div className="login__main__form__head">
             <h1>Welcome!</h1>
             <p>Enter details to login</p>
           </div>
-          <form action="">
+          <form action="#!" id="login-form">
             <input
               type="email"
               placeholder="Email"
@@ -66,16 +67,22 @@ export const UserLogin: FC = () => {
             >
               {showPassword ? "HIDE" : "SHOW"}
             </button>
+
             <a href="#!">
               <p>Forgot Paasword?</p>
             </a>
-            <button type="button" onClick={handleLogin}>
+
+            <button
+              type="button"
+              onClick={handleLogin}
+              className="login__main__form__btn"
+            >
               LOG IN
             </button>
           </form>
-          <div className="errorCtn">{error && <p>{error}</p>}</div>
-        </div>
-      </div>
-    </>
+          <div className="login__main__errorCtn">{error && <p>{error}</p>}</div>
+        </section>
+      </main>
+    </div>
   );
 };

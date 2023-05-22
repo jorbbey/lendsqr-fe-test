@@ -1,83 +1,100 @@
-[data-pagination],
-[data-pagination] *,
-[data-pagination] *:before,
-[data-pagination] *:after {
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  font-kerning: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import "./variables.scss";
 
-[data-pagination] {
-  font-size: 8pt;
-  line-height: 1;
-  font-weight: 400;
-  font-family: "Open Sans", "Source Sans Pro", Roboto, "HelveticaNeue-Light",
-    "Helvetica Neue Light", "Helvetica Neue", "Myriad Pro", "Segoe UI", Myriad,
-    Helvetica, "Lucida Grande", "DejaVu Sans Condensed", "Liberation Sans",
-    "Nimbus Sans L", Tahoma, Geneva, Arial, sans-serif;
-  -webkit-text-size-adjust: 100%;
-  margin: 1em auto;
-  text-align: center;
-  transition: font-size 0.2s ease-in-out;
+.pagination-ctn {
+  // background-color: pink;
+ 
+  [data-pagination],
+  [data-pagination] *,
+  [data-pagination] *:before,
+  [data-pagination] *:after {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-kerning: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // background-color: chartreuse;
+   
+  }
 
-  ul {
-    list-style-type: none;
-    display: inline;
-    font-size: 100%;
-    margin: 0;
-    padding: 0.5em;
+  [data-pagination] {
+    font-size: 8pt;
+    line-height: 1;
+    font-weight: 400;
+    font-family: "Open Sans", "Source Sans Pro", Roboto, "HelveticaNeue-Light",
+      "Helvetica Neue Light", "Helvetica Neue", "Myriad Pro", "Segoe UI", Myriad,
+      Helvetica, "Lucida Grande", "DejaVu Sans Condensed", "Liberation Sans",
+      "Nimbus Sans L", Tahoma, Geneva, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    margin: 1em auto;
+    text-align: center;
+    transition: font-size 0.2s ease-in-out;
+    // background-color: aqua;
+     margin-left: 165px;
 
-    li {
-      display: inline-block;
+    ul {
+      list-style-type: none;
+      display: inline;
       font-size: 100%;
-      width: auto;
-      border-radius: 3px;
+      margin: 0;
+      padding: 0.5em;
+      
 
-      a {
-        text-decoration: none;
-        color: #777;
-        font-size: 100%;
-        padding: 0.5em;
+      li {
+        display: inline-block;
+        font-size: small;
+        width: auto;
+        padding: 2.5px;
+        transform: translateY(-3px);
 
-        &:focus,
-        &:hover {
-          color: rgb(87, 72, 72);
+        a {
+          text-decoration: none;
+          color: $primary-color;
+          font-size: medium;
+          padding: 0.5em;
+
+          &:focus,
+          &:hover {
+            color: rgb(87, 72, 72);
+          }
         }
       }
     }
-  }
 
-  > a {
-    font-size: 140%;
-  }
+    > a {
+      font-size: large;
+      color: $primary-color;
+      background-color: #e1dcec;
+      padding: 3px;
+      border-radius: 3px;
+    }
 
-  li.current {
-    background: rgba(0, 0, 0, 0.1);
-  }
+    li.current {
+      color: rgb(87, 72, 72);
+      border-bottom: 1px soild #e1dcec;
+    }
 
-  // Disabled & Hidden Styles
-  .disabled,
-  [hidden],
-  [disabled] {
-    opacity: 0.5;
-    pointer-events: none;
-  }
+    // Disabled & Hidden Styles
+    .disabled,
+    [hidden],
+    [disabled] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
 
-  @media (min-width: 350px) {
-    font-size: 10pt;
-  }
+    @media (min-width: 350px) {
+      font-size: 10pt;
+    }
 
-  @media (min-width: 500px) {
-    font-size: 12pt;
-  }
+    @media (min-width: 500px) {
+      font-size: 12pt;
+    }
 
-  @media (min-width: 700px) {
-    font-size: 14pt;
-  }
+    @media (min-width: 700px) {
+      font-size: 14pt;
+    }
 
-  @media (min-width: 900px) {
-    font-size: 16pt;
+    @media (min-width: 900px) {
+      font-size: 16pt;
+    }
   }
 }

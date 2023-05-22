@@ -1,10 +1,12 @@
 @import "./variables.scss";
 
+
+
 .UserLoginLogo {
   width: 20%;
   display: flex;
   justify-content: start;
-  background-color: aliceblue;
+  background-color: pink;
   margin: 40px 50px;
 }
 
@@ -63,7 +65,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: start;
-    //     background-color: chartreuse;
+        // background-color: chartreuse;
     width: 80%;
     margin: 0 auto;
 
@@ -74,6 +76,7 @@
       margin-top: 10px;
       padding-left: 10px;
       outline: none;
+      background-color: transparent;
       border: 2px solid $primary-color;
     }
     &::placeholder {

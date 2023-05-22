@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import "../styles/Menu.scss";
-import { menuData } from "../menuData";
+import "../../../scss/style.scss";
+import { menuData } from "./menuData";
 import { Link } from "react-router-dom";
 import { FaUserFriends } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
@@ -23,7 +23,7 @@ export const Menu: FC = () => {
       </div>
       {/* Dashboard Ctn */}
       <Link to="/dashboard" className="dashboard-link">
-        <div className="dashboard-ctn">
+        <div className="dashboard-ico">
           <i>
             <FaHouseUser />
           </i>

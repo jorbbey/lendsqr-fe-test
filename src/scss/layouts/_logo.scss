@@ -1,0 +1,35 @@
+@use '../utils' as u;
+@use "../globals" as g;
+
+.logo {
+  // background-color: bisque;
+  width: 100%;
+  font-family: u.$primary-font-family;
+
+  @media (min-width: 900px) {
+    width: 20%;
+  }
+
+  &__img,
+  &__text {
+    margin-inline: auto;
+  }
+
+  &__img{
+    width: 20px;
+     @include u.breakpoint-up(large) {
+        width: 30px;
+      }
+  }
+
+  &__text {
+    color: g.$primary-color;
+    font-weight: 500;
+    font-size: medium;
+    padding: 1rem;
+
+     @include u.breakpoint-up(large) {
+       font-size: xx-large;
+      }
+  }
+}

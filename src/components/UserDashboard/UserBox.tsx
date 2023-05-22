@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "../styles/UserDashboard.scss";
+import "../../scss/style.scss";
 
 export interface UserProps {
   icon: any;
