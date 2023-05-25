@@ -1,11 +1,17 @@
 import React, { FC } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import "../../scss/style.scss";
-export interface Props {}
+
+ interface holder {
+  name?: string;
+  inputType?: string;
+   placeholder?: any;
+}
 
 export const FilterBox: FC = () => {
   const angleDownIcon = <FaAngleDown />;
-  const filterItems: any[] = [
+
+  const filterItems: holder[]  = [
     {
       name: "Organization",
       inputType: "text",
@@ -39,7 +45,7 @@ export const FilterBox: FC = () => {
   ];
   return (
     <div className="filter-box">
-      {filterItems.map((item) => (
+      {filterItems.map((item: holder) => (
         <div key={item}>
           <label htmlFor="">{item.name}</label>
           <input type={item.inputType} placeholder={angleDownIcon} />

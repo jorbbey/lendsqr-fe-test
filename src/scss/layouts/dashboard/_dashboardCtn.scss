@@ -1,3 +1,348 @@
-.dashboardCtn{
-     background-color: green;
+@use "../../globals/" as g;
+@use "../../utils/" as u;
+
+.dashboardCtn {
+  //   background-color: hsl(120, 86%, 16%);
+  cursor: pointer;
+
+  &__div {
+    background-color: ghostwhite;
+
+    @include u.breakpoint-up(large) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    aside {
+      background-color: #fff;
+      opacity: 0.65;
+      cursor: pointer;
+      width: 100%;
+
+      @include u.breakpoint-up(large) {
+        width: 25%;
+      }
+    }
+
+    &__main {
+      background-color: hsl(0, 0%, 100%);
+      width: 95%;
+      margin: 50px auto;
+
+      @include u.breakpoint-up(large) {
+        width: 70%;
+        margin: 0, 0;
+      }
+
+      h2 {
+        color: g.$primary-color;
+        background-color: ghostwhite;
+        height: 75px;
+      }
+
+      &__userBoxCtn {
+        //    background-color: hsl(240, 92%, 19%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        .user-box-ctn {
+          background-color: white;
+          width: 45%;
+          margin-top: 20px;
+          text-transform: uppercase;
+          color: g.$primary-color;
+          cursor: pointer;
+
+          @include u.breakpoint-up(large) {
+            width: 22%;
+            margin-top: 0;
+          }
+
+          div {
+            background-color: white;
+            width: 80%;
+            margin: 20px auto;
+
+            i {
+              font-size: small;
+              padding: 10px;
+              border-radius: 50%;
+              margin-top: 20px;
+
+              @include u.breakpoint-up(large) {
+                font-size: medium;
+              }
+            }
+
+            p {
+              font-size: x-small;
+              margin-top: 25px;
+
+              @include u.breakpoint-up(large) {
+                font-size: small;
+              }
+            }
+
+            h2 {
+              font-size: medium;
+              background-color: white;
+
+              @include u.breakpoint-up(large) {
+                font-size: x-large;
+              }
+            }
+          }
+        }
+      }
+
+      &__dashboard {
+        //    background-color: palegoldenrod;
+        width: 95%;
+        margin-inline: auto;
+        font-family: u.$primary-font-family;
+        color: g.$primary-color;
+
+        section {
+          // background-color: aqua;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+
+          .dashboard-ctn {
+            //   background-color: yellow;
+            width: 100%;
+            overflow-x: auto;
+
+            .table-head {
+              //     background-color: rgb(202, 105, 8);
+              width: 100%;
+
+              @include u.breakpoint-up(large) {
+                width: 120%;
+              }
+
+              &__ctn {
+                //  background-color: plum;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 250%;
+
+                @include u.breakpoint-up(large) {
+                  width: 100%;
+                  margin-inline: auto;
+                }
+
+                div {
+                  //    background-color: #d18181;
+                  width: 150px;
+                  margin-left: 10px;
+
+                  @include u.breakpoint-up(large) {
+                    margin-left: 0;
+                  }
+
+                  @include u.breakpoint-up(x-large) {
+                    margin-left: 0;
+                    width: 200px;
+                  }
+                }
+
+                h5 {
+                  color: g.$primary-color;
+                  text-transform: capitalize;
+                  font-size: small;
+
+                  @include u.breakpoint-up(large) {
+                    font-size: x-small;
+                  }
+
+                  @include u.breakpoint-up(x-large) {
+                    font-size: medium;
+                  }
+
+                  .ico {
+                    margin-bottom: -2px;
+                    margin-left: 15px;
+                    font-size: medium;
+
+                    @include u.breakpoint-up(large) {
+                      font-size: medium;
+                      margin-left: 10px;
+                      margin-bottom: -5px;
+                    }
+
+                    @include u.breakpoint-up(x-large) {
+                      margin-bottom: -5px;
+                      margin-left: 15px;
+                      font-size: x-large;
+                    }
+                  }
+                }
+              }
+            }
+
+            .dashboard-items {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              background-color: hsl(300, 86%, 25%);
+
+              .dashboard-item {
+                background-color: hsl(180, 29%, 69%);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 5px;
+                border-bottom: 1px solid g.$light-gray;
+
+                .item {
+                  background-color: hsl(0, 32%, 66%);
+                  width: 250%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  align-items: center;
+
+                  @include u.breakpoint-up(large) {
+                    width: 150%;
+                  }
+                  div {
+                    width: 150px;
+                    word-wrap: break-word;
+                    //  background-color: hsl(271, 51%, 37%);
+                    margin-top: 15px;
+                    margin-left: 20px;
+                    font-size: small;
+
+                    @include u.breakpoint-up(large) {
+                      margin-left: 200px;
+                      margin-left: 0;
+                      font-size: small;
+                    }
+                  }
+                }
+              }
+
+              .alertToggle {
+                background-color: pink;
+
+                span {
+                  background-color: red;
+                }
+              }
+            }
+          }
+        }
+
+        &__footer {
+          // background-color: hsl(0, 31%, 66%);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: end;
+          margin: 30px auto;
+
+          @include u.breakpoint-up(large) {
+            flex-direction: row;
+            align-items: center;
+          }
+
+          .page-num {
+            span {
+              padding: 6px;
+              border-radius: 3px;
+              background-color: rgb(192, 192, 223);
+              margin-inline: 10px;
+
+              .ico {
+                margin-left: 10px;
+                transform: translateY(1px);
+              }
+            }
+          }
+        }
+      }
+      .filter-ctn {
+        background-color: hsl(43, 36%, 60%);
+        width: 80%;
+        position: absolute;
+        margin-top: 0;
+        transform: translateY(-37em);
+
+        @include u.breakpoint-up(large) {
+          width: 22%;
+        }
+
+        @include u.breakpoint-up(x-large) {
+          width: 25%;
+        }
+
+        .filter-box {
+          // background-color: rgb(187, 150, 150);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: start;
+
+          div {
+            // background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: start;
+            margin: 5px 0;
+            width: 95%;
+            margin-inline: auto;
+
+            label {
+              margin: 5px 0;
+              text-transform: capitalize;
+              font-size: small;
+            }
+
+            input {
+              padding: 12px;
+              outline: none;
+              border: 1px solid g.$light-gray;
+              width: 100%;
+              border-radius: 8px;
+            }
+          }
+          .btn-ctn {
+            // background-color: blue;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px auto;
+
+            button {
+              outline: none;
+              border: 1px solid g.$light-gray;
+              padding: 12px;
+              width: 45%;
+              border-radius: 8px;
+              text-transform: capitalize;
+              font-weight: 600;
+              color: #fff;
+              background-color: g.$secondary-color;
+
+              &:first-of-type {
+                background-color: transparent;
+                color: g.$primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -10,6 +10,7 @@ import { HiOutlineUsers } from "react-icons/hi";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { FaAngleDown } from "react-icons/fa";
 import { UserDetails } from "./UserDetails";
+import { Link } from "react-router-dom";
 
 const usersAPI =
   "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users";
@@ -28,7 +29,6 @@ export const DashboardCtn: FC = () => {
   let [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const [data, setData] = useState<userData[] | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
   const pageSize = 9; // Number of objects to display per page
 
@@ -65,6 +65,7 @@ export const DashboardCtn: FC = () => {
     setIsFilterOpen(!isFilterOpen);
   };
 
+
   const userIcon = <HiOutlineUsers />;
   const activeUserIcon = <HiOutlineUserGroup />;
   const userColor = "rgb(165, 57, 165)";
@@ -77,54 +78,51 @@ export const DashboardCtn: FC = () => {
     <div className="dashboardCtn">
       <Header />
       {/* menu bar */}
-      <aside>
-        <Menu />
-      </aside>
+      <div className="dashboardCtn__div">
+        <aside>
+          <Menu />
+        </aside>
 
-      {/* main dashboard container */}
-      <section className="dashboardCtn__section">
-        <h2>Users</h2>
-        <div className="dashboardCtn__main__userBoxCtn">
-          <UserBox
-            icon={userIcon}
-            iconColor={userColor}
-            text="Users"
-            num="2,453"
-          />
-          <UserBox
-            icon={activeUserIcon}
-            iconColor={activeUserColor}
-            text="Active users"
-            num="2,453"
-          />
-          <UserBox
-            icon={userIcon}
-            iconColor={loanedUserColor}
-            text="Users wih loans"
-            num="12,453"
-          />
-          <UserBox
-            icon={userIcon}
-            iconColor={savingsUserColor}
-            text="Users with savings"
-            num="102,453"
-          />
-        </div>
+        {/* main dashboard container */}
+        <section className="dashboardCtn__div__main">
+          <h2>Users</h2>
+          <div className="dashboardCtn__div__main__userBoxCtn">
+            <UserBox
+              icon={userIcon}
+              iconColor={userColor}
+              text="Users"
+              num="2,453"
+            />
+            <UserBox
+              icon={activeUserIcon}
+              iconColor={activeUserColor}
+              text="Active users"
+              num="2,453"
+            />
+            <UserBox
+              icon={userIcon}
+              iconColor={loanedUserColor}
+              text="Users wih loans"
+              num="12,453"
+            />
+            <UserBox
+              icon={userIcon}
+              iconColor={savingsUserColor}
+              text="Users with savings"
+              num="102,453"
+            />
+          </div>
 
-        {/* main dashboard */}
-        <div className="dashboard">
-
+          {/* main dashboard */}
+          <div className="dashboardCtn__div__main__dashboard">
             <Dashboard
               data={data}
               page={currentPage}
               pageSize={pageSize}
               filterFunc={handleFilterToggle}
-              setSelectedUserId={setSelectedUserId}
             />
 
-            {selectedUserId && <UserDetails userId={selectedUserId} />}
-
-            <div className="dashboard-footer">
+            <div className="dashboardCtn__div__main__dashboard__footer">
               <div className="page-num">
                 <p>
                   Showing
@@ -142,17 +140,17 @@ export const DashboardCtn: FC = () => {
                 />
               </div>
             </div>
-          
 
-          {isFilterOpen ? (
-            <div className="filter-ctn">
-              <FilterBox />
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
-      </section>
+            {isFilterOpen ? (
+              <div className="filter-ctn">
+                <FilterBox />
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

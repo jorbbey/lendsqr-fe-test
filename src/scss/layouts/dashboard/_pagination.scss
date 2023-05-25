@@ -1,8 +1,13 @@
-@import "./variables.scss";
+@use "../../globals" as g;
+@use "../../utils" as u;
 
 .pagination-ctn {
-  // background-color: pink;
- 
+  width: 100%;
+
+  @include u.breakpoint-up(large) {
+    width: 40%;
+  }
+
   [data-pagination],
   [data-pagination] *,
   [data-pagination] *:before,
@@ -12,8 +17,6 @@
     font-kerning: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    // background-color: chartreuse;
-   
   }
 
   [data-pagination] {
@@ -28,8 +31,6 @@
     margin: 1em auto;
     text-align: center;
     transition: font-size 0.2s ease-in-out;
-    // background-color: aqua;
-     margin-left: 165px;
 
     ul {
       list-style-type: none;
@@ -37,7 +38,6 @@
       font-size: 100%;
       margin: 0;
       padding: 0.5em;
-      
 
       li {
         display: inline-block;
@@ -48,7 +48,7 @@
 
         a {
           text-decoration: none;
-          color: $primary-color;
+          color: g.$primary-color;
           font-size: medium;
           padding: 0.5em;
 
@@ -62,7 +62,7 @@
 
     > a {
       font-size: large;
-      color: $primary-color;
+      color: g.$primary-color;
       background-color: #e1dcec;
       padding: 3px;
       border-radius: 3px;
@@ -82,19 +82,19 @@
     }
 
     @media (min-width: 350px) {
-      font-size: 10pt;
+      font-size: 2pt;
     }
 
     @media (min-width: 500px) {
-      font-size: 12pt;
+      font-size: 4pt;
     }
 
     @media (min-width: 700px) {
-      font-size: 14pt;
+      font-size: 6pt;
     }
 
     @media (min-width: 900px) {
-      font-size: 16pt;
+      font-size: 10pt;
     }
   }
 }

@@ -10,9 +10,9 @@ export interface Props {}
 
 export const Menu: FC = () => {
   return (
-    <div className="Menu">
+    <div className="menu">
       {/* organization switch */}
-      <div className="SwitchOrg">
+      <div className="menu__switchOrg">
         <i>
           <HiBriefcase />
         </i>
@@ -22,17 +22,15 @@ export const Menu: FC = () => {
         </i>
       </div>
       {/* Dashboard Ctn */}
-      <Link to="/dashboard" className="dashboard-link">
-        <div className="dashboard-ico">
-          <i>
-            <FaHouseUser />
-          </i>
-          <p>Dashboard</p>
-        </div>
+      <Link to="/dashboard" className="menu__dashboardLink">
+        <i>
+          <FaHouseUser />
+        </i>
+        <p>Dashboard</p>
       </Link>
 
       {/* Menu Items */}
-      <div className="MenuItems">
+      <div className="menu__menuItems">
         {menuData.map((data: string | any) => (
           <li key={data.id}>
             <h5>{data.name}</h5>

@@ -1,0 +1,122 @@
+@use "../../globals/" as g;
+@use "../../utils/" as u;
+
+
+ i {
+    font-size: small;
+    color: g.$primary-color;
+    margin-top: -10px;
+  }
+
+  p {
+    font-size: small;
+    margin-inline: 10px;
+  }
+
+.menu {
+//   background-color: hsl(66, 80%, 48%);
+  width: 90%;
+  margin-top: 30px;
+  margin-left: -100%; 
+  color: g.$primary-color;
+  opacity: 0.65;
+  position: fixed;
+  cursor: pointer;
+ 
+
+  @include u.breakpoint-up(large) {
+    width: 95%;
+    position: static;
+    margin-inline: auto; 
+  }
+
+  &__switchOrg,
+  &__dashboardLink {
+//     background-color: hsl(0, 43%, 73%);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 95%;
+    margin-inline: auto;
+
+    @include u.breakpoint-up(large) {
+      width: 95%;
+    }
+  }
+
+  &__dashboardLink {
+    margin-top: 20px;
+    text-decoration: none;
+    color: g.$primary-color;
+  }
+
+  &__menuItems {
+//     background-color: rgb(94, 93, 93);
+
+    @include u.breakpoint-up(large) {
+      width: 95%;
+      margin-inline: auto;
+    }
+    color: g.$primary-color;
+    li {
+      list-style-type: none;
+
+      h5 {
+        font-weight: 700;
+      }
+      .menu-link {
+        text-decoration: none;
+        color: g.$primary-color;
+
+        div {
+          // background-color: greenyellow;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+//   .MenuItems {
+//     margin: 20px 25px;
+//     // background-color: green;
+
+//     li {
+//       list-style: none;
+
+//       h5 {
+//         margin: 0px auto;
+//         margin-top: 20px;
+//         font-weight: bold;
+//       }
+
+//       .menu-link {
+//         text-decoration: none;
+//         color: g.$primary-color;
+
+//         div {
+//           display: flex;
+//           justify-content: start;
+//           align-items: center;
+//           margin: 0px 0px;
+//           padding-left: 20px;
+//           &:active {
+//             background-color: rgb(211, 238, 229);
+//             border-left: 2px solid g.$secondary-color;
+//           }
+
+//           i {
+//             font-size: small;
+//           }
+//           p {
+//             margin-left: 10px;
+//             font-size: small;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

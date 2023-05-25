@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../../scss/style.scss"
+
 interface PaginationProps {
   totalPages: number;
   currentPage: number;
