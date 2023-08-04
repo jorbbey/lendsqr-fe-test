@@ -105,6 +105,76 @@
         font-family: u.$primary-font-family;
         color: g.$primary-color;
 
+        .table-head {
+          // background-color: rgb(202, 105, 8);
+          width: 100%;
+
+          @include u.breakpoint-up(large) {
+            width: 100%;
+          }
+
+          &__ctn {
+            //  background-color: plum;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 250%;
+
+            @include u.breakpoint-up(large) {
+              width: 100%;
+              margin-inline: auto;
+            }
+
+            div {
+                //  background-color: #be5e5e;
+              width: 150px;
+              margin-left: 10px;
+
+              @include u.breakpoint-up(large) {
+                margin-left: 0;
+                padding-left: 10px;
+              }
+
+              @include u.breakpoint-up(x-large) {
+                margin-left: 0;
+                width: 200px;
+              }
+            }
+
+            h5 {
+              color: g.$primary-color;
+              text-transform: capitalize;
+              font-size: small;
+
+              @include u.breakpoint-up(large) {
+                font-size: x-small;
+              }
+
+              @include u.breakpoint-up(x-large) {
+                font-size: medium;
+              }
+
+              .ico {
+                margin-bottom: -2px;
+                margin-left: 15px;
+                font-size: medium;
+
+                @include u.breakpoint-up(large) {
+                  font-size: medium;
+                  margin-left: 10px;
+                  margin-bottom: -5px;
+                }
+
+                @include u.breakpoint-up(x-large) {
+                  margin-bottom: -5px;
+                  margin-left: 15px;
+                  font-size: x-large;
+                }
+              }
+            }
+          }
+        }
+
         section {
           // background-color: aqua;
           display: flex;
@@ -117,84 +187,15 @@
             width: 100%;
             overflow-x: auto;
 
-            .table-head {
-              //     background-color: rgb(202, 105, 8);
-              width: 100%;
-
-              @include u.breakpoint-up(large) {
-                width: 120%;
-              }
-
-              &__ctn {
-                //  background-color: plum;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 250%;
-
-                @include u.breakpoint-up(large) {
-                  width: 100%;
-                  margin-inline: auto;
-                }
-
-                div {
-                  //    background-color: #d18181;
-                  width: 150px;
-                  margin-left: 10px;
-
-                  @include u.breakpoint-up(large) {
-                    margin-left: 0;
-                  }
-
-                  @include u.breakpoint-up(x-large) {
-                    margin-left: 0;
-                    width: 200px;
-                  }
-                }
-
-                h5 {
-                  color: g.$primary-color;
-                  text-transform: capitalize;
-                  font-size: small;
-
-                  @include u.breakpoint-up(large) {
-                    font-size: x-small;
-                  }
-
-                  @include u.breakpoint-up(x-large) {
-                    font-size: medium;
-                  }
-
-                  .ico {
-                    margin-bottom: -2px;
-                    margin-left: 15px;
-                    font-size: medium;
-
-                    @include u.breakpoint-up(large) {
-                      font-size: medium;
-                      margin-left: 10px;
-                      margin-bottom: -5px;
-                    }
-
-                    @include u.breakpoint-up(x-large) {
-                      margin-bottom: -5px;
-                      margin-left: 15px;
-                      font-size: x-large;
-                    }
-                  }
-                }
-              }
-            }
-
             .dashboard-items {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
               align-items: center;
-              background-color: hsl(300, 86%, 25%);
+              // background-color: hsl(300, 86%, 25%);
 
               .dashboard-item {
-                background-color: hsl(180, 29%, 69%);
+                // background-color: hsl(180, 29%, 69%);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -203,8 +204,8 @@
                 border-bottom: 1px solid g.$light-gray;
 
                 .item {
-                  background-color: hsl(0, 32%, 66%);
-                  width: 250%;
+                  // background-color: hsl(0, 32%, 66%);
+                  width: 100%;
                   display: flex;
                   flex-direction: row;
                   justify-content: space-between;

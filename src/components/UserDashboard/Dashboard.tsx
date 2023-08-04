@@ -3,7 +3,6 @@ import "../../scss/style.scss";
 import { CgSortAz } from "react-icons/cg";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { UserDetails } from "./UserDetails";
-import { Link } from "react-router-dom";
 
 export interface userData {
   id: number;
@@ -15,11 +14,10 @@ export interface Props {
   page: number;
   pageSize: number;
   data: userData[];
-  filterFunc: () => void;
   // setSelectedUserId: (id: string | null) => void;
 }
 
-export const Dashboard: FC<Props> = ({ page, pageSize, data, filterFunc }) => {
+export const Dashboard: FC<Props> = ({ page, pageSize, data }) => {
   const [openBox, setOpenBox] = useState<boolean>(false);
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
@@ -29,14 +27,7 @@ export const Dashboard: FC<Props> = ({ page, pageSize, data, filterFunc }) => {
   // Get the current page items based on the calculated indices
   const currentPageItems = data ? data.slice(startIndex, endIndex) : [];
 
-  const tableHead: string[] = [
-    "organization",
-    "username",
-    "email",
-    "phone no.",
-    "date joined",
-    "status",
-  ];
+  
 
   const handleOPenBox = (): any | undefined => {
     setOpenBox(!openBox);
@@ -49,19 +40,7 @@ export const Dashboard: FC<Props> = ({ page, pageSize, data, filterFunc }) => {
   return (
     <section>
       <div className="dashboard-ctn">
-        <div className="table-head">
-          <div className="table-head__ctn">
-            {tableHead.map((head) => (
-              <div key={head}>
-                <h5>
-                  {head}
-                  <CgSortAz className="ico" onClick={filterFunc} />
-                </h5>
-              </div>
-            ))}
-          </div>
-        </div>
-
+       
         {/* Display the data */}
         <section className="dashboard-items">
           <div className="dashboard-item">
@@ -77,16 +56,16 @@ export const Dashboard: FC<Props> = ({ page, pageSize, data, filterFunc }) => {
             ))}
           </div>
 
-          <div className="alertToggle">
+          {/* <div className="alertToggle">
             {currentPageItems.map((item: any) => (
               <span onClick={() => handleOPenBox()}>
                 <BiDotsVerticalRounded />
               </span>
             ))}
-          </div>
+          </div> */}
         </section>
 
-        <div className="alertCtn">
+        {/* <div className="alertCtn">
           {openBox ? (
             <div
               className="alertCtn__box"
@@ -109,7 +88,7 @@ export const Dashboard: FC<Props> = ({ page, pageSize, data, filterFunc }) => {
           ) : (
             ""
           )}
-        </div>
+        </div> */}
       </div>
 
       {selectedUserId && <UserDetails userId={selectedUserId} />}

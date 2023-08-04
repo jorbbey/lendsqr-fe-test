@@ -9,8 +9,7 @@ import { Dashboard } from "./Dashboard";
 import { HiOutlineUsers } from "react-icons/hi";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { FaAngleDown } from "react-icons/fa";
-import { UserDetails } from "./UserDetails";
-import { Link } from "react-router-dom";
+import { CgSortAz } from "react-icons/cg";
 
 const usersAPI =
   "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users";
@@ -65,6 +64,8 @@ export const DashboardCtn: FC = () => {
     setIsFilterOpen(!isFilterOpen);
   };
 
+  
+
 
   const userIcon = <HiOutlineUsers />;
   const activeUserIcon = <HiOutlineUserGroup />;
@@ -72,6 +73,15 @@ export const DashboardCtn: FC = () => {
   const activeUserColor = "rgb(37, 37, 167)";
   const loanedUserColor = "rgb(241, 73, 11)";
   const savingsUserColor = "rgb(221, 13, 83)";
+
+  const tableHead: string[] = [
+    // "organization",
+    "username",
+    "email",
+    "phone no.",
+    "date joined",
+    "status",
+  ];
 
   return (
     //  user dashboard container
@@ -115,11 +125,25 @@ export const DashboardCtn: FC = () => {
 
           {/* main dashboard */}
           <div className="dashboardCtn__div__main__dashboard">
+
+            <div className="table-head">
+              <div className="table-head__ctn">
+                {tableHead.map((head) => (
+                  <div key={head}>
+                    <h5>
+                      {head}
+                      <CgSortAz className="ico" onClick={handleFilterToggle} />
+                    </h5>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <Dashboard
               data={data}
               page={currentPage}
               pageSize={pageSize}
-              filterFunc={handleFilterToggle}
+              // filterFunc={handleFilterToggle}
             />
 
             <div className="dashboardCtn__div__main__dashboard__footer">

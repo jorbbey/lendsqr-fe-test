@@ -1,8 +1,10 @@
 import React, { FC, useState } from "react";
 import '../scss/style.scss'
 import { Logo } from "./Header/Logo";
-import heroUrl from "../assets/images/hero-image.svg";
-export interface Props {}
+import heroUrl from '../assets/images/hero-image.svg'
+
+export interface Props { }
+type ImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
 
 export const UserLogin: FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -18,14 +20,14 @@ export const UserLogin: FC = () => {
 
   const handleLogin = (): void => {
     if (email.trim() === "" || password.trim() === "") {
-      setError("Please enter both Email and Password.");
+      setError("Please enter both Email and Password...");
       return;
     } else {
       window.location.href = "/dashboard";
     }
   };
 
-  const heroImage: string = heroUrl;
+  const heroImage: ImageProps | any = heroUrl;
 
   return (
     <div className="login">

@@ -2,17 +2,17 @@
 @use "../globals" as g;
 
 .head {
-  background-color: hsl(0, 52%, 21%);
-  width: 90%;
+  // background-color: hsl(0, 52%, 21%);
+  width: 95%;
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &__firstCtn {
-    background-color: hsl(48, 80%, 32%);
+    // background-color: hsl(48, 80%, 32%);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 90%;
 
@@ -21,13 +21,14 @@
     }
 
     &__logo {
-      background-color: hsl(180, 80%, 27%);
+      // background-color: hsl(180, 80%, 27%);
       width: 40%;
     }
 
     &__search {
-      background-color: hsl(180, 72%, 14%);
+      // background-color: hsl(180, 72%, 14%);
       width: 40%;
+      margin-inline: 25px;
 
       input {
         outline: none;
@@ -36,7 +37,7 @@
         width: 150px;
         padding-left: 10px;
         background: #ffffff;
-        border: 1px solid rgb(236, 229, 229);
+        border: 1px solid rgb(112, 103, 103);
         border-radius: 6px;
 
         @include u.breakpoint-up(large) {
@@ -56,7 +57,7 @@
     }
 
     i {
-      font-size: 15px;
+      font-size: 12px;
       color: rgb(167, 164, 164);
       position: absolute;
       margin: 6px -25px;
@@ -85,7 +86,7 @@
   &__mobile__secondCtn {
     position: absolute;
     display: inline-flex;
-    background-color: hsl(280, 84%, 36%);
+    // background-color: hsl(280, 84%, 36%);
     align-items: center;
     margin-top: 40px;
 
@@ -119,7 +120,7 @@
 
     @include u.breakpoint-up(large) {
       display: inline-flex;
-      background-color: hsl(280, 84%, 36%);
+      // background-color: hsl(280, 84%, 36%);
       align-items: center;
     }
 
