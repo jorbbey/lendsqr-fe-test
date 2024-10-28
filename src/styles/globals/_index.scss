@@ -1,0 +1,5 @@
+ // takes all partials from the global dir and load them into the main style.scss file
+
+@forward 'boilerplate';
+@forward 'typography';
+@forward 'colors';

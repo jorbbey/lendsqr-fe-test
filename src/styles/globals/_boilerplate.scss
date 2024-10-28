@@ -1,0 +1,18 @@
+ @use '../utils';
+
+ html{
+    box-sizing: border-box;
+    font-size: 100%;  // for accessibility purpose
+ }
+
+ *, *::before, *::after {
+    box-sizing: inherit;
+ }
+
+ body{
+    margin: 0;
+    padding: 0;
+    font-family: utils.$font;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+ }

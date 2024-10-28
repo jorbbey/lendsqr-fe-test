@@ -1,16 +1,16 @@
 import React from "react";
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useState, useEffect } from "react";
+import "./styles/style.scss";
+import Table from "./components/Table";
+import  UserDetails  from "./components/UserDetails";
 
-function App() {
-  const [count, setCount] = useState(0);
+const App =()=> {
 
   return (
     <>
       <div>
-        <h1>Test for Lendsqr Interview</h1>
+        <Table head={[]} />
+        {/* <UserDetails /> */}
       </div>
     </>
   );
