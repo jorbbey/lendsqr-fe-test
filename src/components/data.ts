@@ -40,3 +40,5 @@ export const fetchUserDetail = async () => {
 export const userHead: string[] = ['organization', 'username', 'email', 'phone number', 'date joined', 'status']
 
 export const userDetailsNav: string[] = ['general details', 'documents', 'bank details', 'loans', 'savings', 'app and system']
+
+export const userDetailsNavMenu: string[] = ['personal information', 'education and employment', 'socials', 'guarantors']
